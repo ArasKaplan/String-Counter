@@ -37,7 +37,7 @@ int hashfunc_1(int key){
 	return (key%SIZE);
 }
 
-void put_on_hashmap_doubleh(struct dict aday,struct dict *hmap){//hashdoc'ta (17011039.txt) tutulan kelimeleri programdaki tabloya alma fonksiyonu
+void put_on_hashmap_doubleh(struct dict aday,struct dict *hmap){//hashdoc'ta (hash.txt) tutulan kelimeleri programdaki tabloya alma fonksiyonu
 	int i=0;
 	int key=horners_hash(aday);
 	int hash2=hashfunc_2(key);
@@ -58,7 +58,7 @@ void put_on_hashmap_doubleh(struct dict aday,struct dict *hmap){//hashdoc'ta (17
 
 void read_from_hmap(struct dict *hmap){
 	FILE *fp;
-	fp=fopen("17011039.txt","r");//hashdoc(17011039.txt)den kelimeler sýrayla alýnýr
+	fp=fopen("hash.txt","r");//hashdoc(hash.txt)den kelimeler sýrayla alýnýr
 	int flag=1;
 	struct dict aday;
 	aday.count=0;
@@ -144,9 +144,9 @@ void read_from_docs(char *path,struct dict *hmap){//Path deðeri alýnýp o dosya a
 	fclose(fp);
 }
 
-void rewrite_hash(struct dict* hmap){//her yeni dosya okunduktan sonra hashdoc(17011039.txt) silinir ve programdaki güncel hashmap yazýlýr
+void rewrite_hash(struct dict* hmap){//her yeni dosya okunduktan sonra hashdoc(hash.txt) silinir ve programdaki güncel hashmap yazýlýr
 	FILE *fp;
-	fp=fopen("17011039.txt","w");
+	fp=fopen("hash.txt","w");
 	int i;
 	int j;
 	for(i=0;i<SIZE;i++){
